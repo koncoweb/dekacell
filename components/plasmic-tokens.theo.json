@@ -1,0 +1,199 @@
+{
+  "props": [
+    {
+      "name": "Blue",
+      "type": "color",
+      "value": "#007AFF",
+      "category": "color",
+      "meta": {
+        "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
+        "id": "zV5yMtBWvAoTSRn"
+      }
+    },
+    {
+      "name": "Content max width",
+      "type": "spacing",
+      "value": "1080px",
+      "category": "spacing",
+      "meta": {
+        "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
+        "id": "XcYFiwcUDH49lOy"
+      }
+    },
+    {
+      "name": "dark/blue",
+      "type": "color",
+      "value": "#0A84FF",
+      "category": "color",
+      "meta": {
+        "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
+        "id": "CTN7n6rcxHtuzIa"
+      }
+    },
+    {
+      "name": "dark/gray/06",
+      "type": "color",
+      "value": "#1C1C1E",
+      "category": "color",
+      "meta": {
+        "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
+        "id": "3DLiAPhOc3EejIs"
+      }
+    },
+    {
+      "name": "dark/green",
+      "type": "color",
+      "value": "#32D74B",
+      "category": "color",
+      "meta": {
+        "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
+        "id": "j1bNhpzbdKlWsDD"
+      }
+    },
+    {
+      "name": "dark/label",
+      "type": "color",
+      "value": "#FFFFFFD9",
+      "category": "color",
+      "meta": {
+        "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
+        "id": "qxPknjurOUltLIS"
+      }
+    },
+    {
+      "name": "dark/quarternary",
+      "type": "color",
+      "value": "#FFFFFF1A",
+      "category": "color",
+      "meta": {
+        "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
+        "id": "ulAp7kgy-JSNO6A"
+      }
+    },
+    {
+      "name": "dark/secondary",
+      "type": "color",
+      "value": "#FFFFFF80",
+      "category": "color",
+      "meta": {
+        "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
+        "id": "U5I3m0smg6O5m0v"
+      }
+    },
+    {
+      "name": "light/blue",
+      "type": "color",
+      "value": "#007AFF",
+      "category": "color",
+      "meta": {
+        "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
+        "id": "y5cpmsTtUUnKvfG"
+      }
+    },
+    {
+      "name": "light/gray/05",
+      "type": "color",
+      "value": "#E5E5EA",
+      "category": "color",
+      "meta": {
+        "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
+        "id": "w02QwgoSwbg-KdJ"
+      }
+    },
+    {
+      "name": "light/gray/06",
+      "type": "color",
+      "value": "#F2F2F7D9",
+      "category": "color",
+      "meta": {
+        "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
+        "id": "myZxfJdq_yhOKlb"
+      }
+    },
+    {
+      "name": "light/green",
+      "type": "color",
+      "value": "#34C759",
+      "category": "color",
+      "meta": {
+        "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
+        "id": "xr3yF5wp-tDdwEC"
+      }
+    },
+    {
+      "name": "light/indigo",
+      "type": "color",
+      "value": "#5856D6",
+      "category": "color",
+      "meta": {
+        "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
+        "id": "-qfadpUqgZ0Rvb9"
+      }
+    },
+    {
+      "name": "light/label",
+      "type": "color",
+      "value": "#1C1C1E",
+      "category": "color",
+      "meta": {
+        "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
+        "id": "mKxumytFpK3K8OF"
+      }
+    },
+    {
+      "name": "light/quarternary",
+      "type": "color",
+      "value": "#0000001A",
+      "category": "color",
+      "meta": {
+        "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
+        "id": "mFHWe0T7RgT1YxX"
+      }
+    },
+    {
+      "name": "light/red",
+      "type": "color",
+      "value": "#FF3B30",
+      "category": "color",
+      "meta": {
+        "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
+        "id": "_tO5WKnCz8s9O9Z"
+      }
+    },
+    {
+      "name": "light/secondary",
+      "type": "color",
+      "value": "#480F0FB3",
+      "category": "color",
+      "meta": {
+        "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
+        "id": "voQVjzkA-FuoJ5Y"
+      }
+    },
+    {
+      "name": "transparant",
+      "type": "color",
+      "value": "#480F0F00",
+      "category": "color",
+      "meta": {
+        "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
+        "id": "8kAPMCwmA"
+      }
+    },
+    {
+      "name": "white",
+      "type": "color",
+      "value": "#FFFFFF",
+      "category": "color",
+      "meta": {
+        "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
+        "id": "ER0EqoDprnUkdkZ"
+      }
+    }
+  ],
+  "global": {
+    "meta": {
+      "source": "plasmic.app"
+    }
+  }
+}

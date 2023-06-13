@@ -1,0 +1,172 @@
+.root {
+  box-shadow: 0px 10px 10px 0px #00000026;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-width: 400px;
+  background: var(--token-ER0EqoDprnUkdkZ);
+  position: relative;
+  border-radius: 16px;
+}
+.rootprimary {
+  border: 4px solid var(--token-xr3yF5wp-tDdwEC);
+}
+.rootborders_flatLeft {
+  border-top-left-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
+.rootborders_flatRight {
+  border-bottom-right-radius: 0px;
+  border-top-right-radius: 0px;
+}
+.freeBox__fcL20 {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  padding: 32px;
+}
+.freeBox__fcL20 > :global(.__wab_flex-container) {
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  margin-top: calc(0px - 16px);
+  height: calc(100% + 16px);
+}
+.freeBox__fcL20 > :global(.__wab_flex-container) > *,
+.freeBox__fcL20 > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__fcL20 > :global(.__wab_flex-container) > picture > img,
+.freeBox__fcL20
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-top: 16px;
+}
+.freeBox___9OBzk {
+  display: flex;
+  flex-direction: row;
+}
+.freeBox__huT {
+  display: flex;
+  position: relative;
+}
+.slotTargetLabel {
+  font-size: 16px;
+  font-weight: 600;
+  text-transform: uppercase;
+  line-height: 1.5;
+  letter-spacing: 0.03em;
+}
+.freeBox__ewiRp {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+}
+.freeBox__ewiRp > :global(.__wab_flex-container) {
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  margin-left: calc(0px - 8px);
+  width: calc(100% + 8px);
+}
+.freeBox__ewiRp > :global(.__wab_flex-container) > *,
+.freeBox__ewiRp > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__ewiRp > :global(.__wab_flex-container) > picture > img,
+.freeBox__ewiRp
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-left: 8px;
+}
+.freeBox__hzHkm {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-items: stretch;
+  justify-content: flex-start;
+}
+.freeBox__arb7 {
+  display: flex;
+  position: relative;
+  width: auto;
+}
+.slotTargetDollars {
+  font-size: 48px;
+  font-weight: 800;
+  color: var(--token-mKxumytFpK3K8OF);
+  line-height: 1;
+}
+.divider:global(.__wab_instance) {
+  position: relative;
+  flex-shrink: 0;
+}
+.freeBox__g7Pf {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+  background: var(--token-myZxfJdq_yhOKlb);
+  height: 100%;
+  min-height: 0;
+  padding: 32px;
+}
+.freeBox__g7Pf > :global(.__wab_flex-container) {
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  min-height: 0;
+  margin-top: calc(0px - 32px);
+  height: calc(100% + 32px);
+}
+.freeBox__g7Pf > :global(.__wab_flex-container) > *,
+.freeBox__g7Pf > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox__g7Pf > :global(.__wab_flex-container) > picture > img,
+.freeBox__g7Pf
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-top: 32px;
+}
+.freeBox___3RtTl {
+  display: flex;
+  position: relative;
+  flex-direction: column;
+}
+.freeBox___3RtTl > :global(.__wab_flex-container) {
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  margin-top: calc(0px - 16px);
+  height: calc(100% + 16px);
+}
+.freeBox___3RtTl > :global(.__wab_flex-container) > *,
+.freeBox___3RtTl > :global(.__wab_flex-container) > :global(.__wab_slot) > *,
+.freeBox___3RtTl > :global(.__wab_flex-container) > picture > img,
+.freeBox___3RtTl
+  > :global(.__wab_flex-container)
+  > :global(.__wab_slot)
+  > picture
+  > img {
+  margin-top: 16px;
+}
+.valueProp__irq7Z:global(.__wab_instance) {
+  width: 100%;
+  min-width: 0;
+}
+.svg__xfL7D {
+  object-fit: cover;
+  color: #34c759;
+  width: 24px;
+  height: 24px;
+}
+.valueProp__saXaX:global(.__wab_instance) {
+  width: 100%;
+  min-width: 0;
+}
+.svg__vuR5C {
+  object-fit: cover;
+  color: #34c759;
+  width: 24px;
+  height: 24px;
+}

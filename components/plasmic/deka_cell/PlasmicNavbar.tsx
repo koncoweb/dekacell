@@ -159,7 +159,7 @@ function PlasmicNavbar__RenderFunc(props: {
             >
               {hasVariant(globalVariants, "screen", "mobileOnly")
                 ? "Services"
-                : "Services"}
+                : "Layanan"}
             </div>
           </Button>
           {(

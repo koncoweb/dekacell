@@ -151,10 +151,10 @@ function PlasmicLogo__RenderFunc(props: {
         displayMinWidth={"0" as const}
         displayWidth={"40px" as const}
         src={{
-          src: "/plasmic/deka_cell/images/logo.svg",
-          fullWidth: 150,
-          fullHeight: 150,
-          aspectRatio: 1
+          src: "/plasmic/deka_cell/images/dekaCellTanpaTeks100Png.png",
+          fullWidth: 100,
+          fullHeight: 100,
+          aspectRatio: undefined
         }}
       />
     </p.PlasmicLink>

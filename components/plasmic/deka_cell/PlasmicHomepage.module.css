@@ -41,6 +41,12 @@
   > img {
   margin-top: 64px;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .headerHeroSection {
+    padding-bottom: 60px;
+    background: url("/plasmic/deka_cell/images/_3476572461042979693392495594533595071774500Njpg.jpg") top 10% left 50% / contain no-repeat;
+  }
+}
 .navbar:global(.__wab_instance) {
   width: 100%;
   align-self: stretch;
@@ -88,9 +94,12 @@
 @media (min-width: 0px) and (max-width: 768px) {
   .columns__n8Mdj {
     width: 100%;
-    height: auto;
     flex-direction: row;
+    margin-bottom: 0px;
+    max-width: none;
+    height: 100px;
     min-width: 0;
+    flex-shrink: 0;
   }
 }
 @media (min-width: 0px) and (max-width: 768px) {
@@ -178,16 +187,33 @@
   justify-content: flex-start;
   height: auto;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .freeBox__tJsUl {
+    padding-bottom: 0px;
+    padding-top: 0px;
+  }
+}
 .text__bniHs {
   font-size: 60px;
   font-weight: 800;
   line-height: 1;
   color: var(--token-8kAPMCwmA);
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .text__bniHs {
+    padding-bottom: 0px;
+    padding-top: 47px;
+  }
+}
 .text__gmeK {
   font-size: 20px;
   color: var(--token-8kAPMCwmA);
   line-height: 28px;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .text__gmeK {
+    margin-bottom: 0px;
+  }
 }
 .freeBox__uuLbb {
   display: flex;
@@ -215,30 +241,20 @@
   position: relative;
   flex-direction: column;
 }
-.section {
-  display: grid;
-  position: relative;
-  align-content: flex-start;
-  justify-items: center;
-  width: 100%;
-  margin-bottom: 20px;
-  margin-top: 36px;
-  min-width: 0;
-  grid-template-columns:
-    var(--plsmc-viewport-gap) 1fr minmax(0, var(--plsmc-wide-chunk))
-    min(
-      var(--plsmc-standard-width),
-      calc(100% - var(--plsmc-viewport-gap) - var(--plsmc-viewport-gap))
-    )
-    minmax(0, var(--plsmc-wide-chunk)) 1fr var(--plsmc-viewport-gap);
-  padding: 8px 0;
+@media (min-width: 0px) and (max-width: 768px) {
+  .column__bd0Pk {
+    padding-top: 0px;
+  }
 }
-:where(.section > *) {
-  grid-column: 4;
-}
-.valuePropsSection:global(.__wab_instance) {
+.tentangsection:global(.__wab_instance) {
   position: relative;
   margin-top: 0px;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .tentangsection:global(.__wab_instance) {
+    height: 1540px;
+    flex-shrink: 0;
+  }
 }
 .freeBox__lCbya {
   max-width: var(--token-XcYFiwcUDH49lOy);

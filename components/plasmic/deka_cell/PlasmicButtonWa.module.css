@@ -11,6 +11,11 @@
 .text {
   text-align: left;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .text {
+    font-size: 14px;
+  }
+}
 .svg__m4RmI {
   width: 24px;
   height: 24px;

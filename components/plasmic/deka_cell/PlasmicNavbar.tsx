@@ -38,6 +38,7 @@ import {
 } from "@plasmicapp/react-web";
 import Logo from "../../Logo"; // plasmic-import: RcKSuSxU4hFDkbk/component
 import Button from "../../Button"; // plasmic-import: OZSqee0ES_HTq_B/component
+import ButtonWa from "../../ButtonWa"; // plasmic-import: lC_mwoGu3T/component
 
 import { useScreenVariants as useScreenVariantsqHr8XyK5HNLc7Z } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: QHr8XyK5hNLc7Z_/globalVariant
 
@@ -60,6 +61,7 @@ export const PlasmicNavbar__ArgProps = new Array<ArgPropType>();
 export type PlasmicNavbar__OverridesType = {
   root?: p.Flex<"div">;
   logo?: p.Flex<typeof Logo>;
+  text?: p.Flex<"div">;
 };
 
 export interface DefaultNavbarProps {
@@ -146,44 +148,33 @@ function PlasmicNavbar__RenderFunc(props: {
             link={`/services`}
             submitsForm={true}
           >
-            {"Services"}
+            <div
+              data-plasmic-name={"text"}
+              data-plasmic-override={overrides.text}
+              className={classNames(
+                projectcss.all,
+                projectcss.__wab_text,
+                sty.text
+              )}
+            >
+              {hasVariant(globalVariants, "screen", "mobileOnly")
+                ? "Services"
+                : "Services"}
+            </div>
           </Button>
-          <Button
-            className={classNames("__wab_instance", sty.button__zCc2H)}
-            color={"navLink" as const}
-            submitsForm={true}
-          >
-            {"Features"}
-          </Button>
-          <Button
-            className={classNames("__wab_instance", sty.button__tfHaP)}
-            color={"navLink" as const}
-            submitsForm={true}
-          >
-            {"Company"}
-          </Button>
-          <Button
-            className={classNames("__wab_instance", sty.button__bwo2E)}
-            color={"navLink" as const}
-            submitsForm={true}
-          >
-            {"Contact"}
-          </Button>
-          <Button
-            className={classNames("__wab_instance", sty.button__kSJp)}
-            color={"navLink" as const}
-            submitsForm={true}
-          >
-            {"Log in"}
-          </Button>
-          <Button
-            className={classNames("__wab_instance", sty.button__mzsob)}
-            color={"darkGray" as const}
-            submitsForm={true}
-          >
-            {"Sign up"}
-          </Button>
+          {(
+            hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
+          ) ? (
+            <ButtonWa
+              className={classNames("__wab_instance", sty.buttonWa__q5Yr)}
+            />
+          ) : null}
         </p.Stack>
+        {(hasVariant(globalVariants, "screen", "mobileOnly") ? true : true) ? (
+          <ButtonWa
+            className={classNames("__wab_instance", sty.buttonWa__uh8Zc)}
+          />
+        ) : null}
         {false ? (
           <div className={classNames(projectcss.all, sty.freeBox__wuMiw)}>
             <button
@@ -210,8 +201,9 @@ function PlasmicNavbar__RenderFunc(props: {
 }
 
 const PlasmicDescendants = {
-  root: ["root", "logo"],
-  logo: ["logo"]
+  root: ["root", "logo", "text"],
+  logo: ["logo"],
+  text: ["text"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -219,6 +211,7 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   logo: typeof Logo;
+  text: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -282,6 +275,7 @@ export const PlasmicNavbar = Object.assign(
   {
     // Helper components rendering sub-elements
     logo: makeNodeComponent("logo"),
+    text: makeNodeComponent("text"),
 
     // Metadata about props expected for PlasmicNavbar
     internalVariantProps: PlasmicNavbar__VariantProps,

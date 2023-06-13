@@ -56,7 +56,7 @@ type ArgPropType = keyof PlasmicServices__ArgsType;
 export const PlasmicServices__ArgProps = new Array<ArgPropType>();
 
 export type PlasmicServices__OverridesType = {
-  root?: p.Flex<"div">;
+  root?: p.Flex<"dd">;
   navbar?: p.Flex<typeof Navbar>;
   foreground?: p.Flex<"div">;
   h1?: p.Flex<"h1">;
@@ -110,7 +110,7 @@ function PlasmicServices__RenderFunc(props: {
   return (
     <React.Fragment>
       <Head>
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <title key="title">{PlasmicServices.pageMetadata.title}</title>
         <meta
           key="og:title"
@@ -122,6 +122,31 @@ function PlasmicServices__RenderFunc(props: {
           name="twitter:title"
           content={PlasmicServices.pageMetadata.title}
         />
+        <meta
+          key="description"
+          name="description"
+          content={PlasmicServices.pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={PlasmicServices.pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={PlasmicServices.pageMetadata.description}
+        />
+        <meta
+          key="og:image"
+          property="og:image"
+          content={PlasmicServices.pageMetadata.ogImageSrc}
+        />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={PlasmicServices.pageMetadata.ogImageSrc}
+        />
       </Head>
 
       <style>{`
@@ -131,7 +156,7 @@ function PlasmicServices__RenderFunc(props: {
       `}</style>
 
       <div className={projectcss.plasmic_page_wrapper}>
-        <div
+        <dd
           data-plasmic-name={"root"}
           data-plasmic-override={overrides.root}
           data-plasmic-root={true}
@@ -554,7 +579,7 @@ function PlasmicServices__RenderFunc(props: {
             data-plasmic-override={overrides.footerSection}
             className={classNames("__wab_instance", sty.footerSection)}
           />
-        </div>
+        </dd>
       </div>
     </React.Fragment>
   ) as React.ReactElement | null;
@@ -587,7 +612,7 @@ type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
   (typeof PlasmicDescendants)[T][number];
 type NodeDefaultElementType = {
-  root: "div";
+  root: "dd";
   navbar: typeof Navbar;
   foreground: "div";
   h1: "h1";
@@ -675,9 +700,11 @@ export const PlasmicServices = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "Services",
-      description: "",
-      ogImageSrc: "",
+      title: "Layanan DekaCell : Servis HP Pekalongan",
+      description:
+        "Jenis kerusakan Hardware dan Software Layanan DekaCell : Servis HP Pekalongan",
+      ogImageSrc:
+        "https://site-assets.plasmic.app/be10f08025fa601b8c9cc857f2bf2b15.jpg",
       canonical: ""
     }
   }

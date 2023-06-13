@@ -75,8 +75,7 @@ export type PlasmicHomepage__OverridesType = {
   root?: p.Flex<"div">;
   headerHeroSection?: p.Flex<"div">;
   navbar?: p.Flex<typeof Navbar>;
-  section?: p.Flex<"section">;
-  valuePropsSection?: p.Flex<typeof Section>;
+  tentangsection?: p.Flex<typeof Section>;
   checkpointsSection?: p.Flex<typeof Section>;
   button?: p.Flex<typeof Button>;
   h3?: p.Flex<"h3">;
@@ -136,7 +135,7 @@ function PlasmicHomepage__RenderFunc(props: {
   return (
     <React.Fragment>
       <Head>
-        <meta name="twitter:card" content="summary" />
+        <meta name="twitter:card" content="summary_large_image" />
         <title key="title">{PlasmicHomepage.pageMetadata.title}</title>
         <meta
           key="og:title"
@@ -147,6 +146,31 @@ function PlasmicHomepage__RenderFunc(props: {
           key="twitter:title"
           name="twitter:title"
           content={PlasmicHomepage.pageMetadata.title}
+        />
+        <meta
+          key="description"
+          name="description"
+          content={PlasmicHomepage.pageMetadata.description}
+        />
+        <meta
+          key="og:description"
+          property="og:description"
+          content={PlasmicHomepage.pageMetadata.description}
+        />
+        <meta
+          key="twitter:description"
+          name="twitter:description"
+          content={PlasmicHomepage.pageMetadata.description}
+        />
+        <meta
+          key="og:image"
+          property="og:image"
+          content={PlasmicHomepage.pageMetadata.ogImageSrc}
+        />
+        <meta
+          key="twitter:image"
+          name="twitter:image"
+          content={PlasmicHomepage.pageMetadata.ogImageSrc}
         />
       </Head>
 
@@ -253,16 +277,10 @@ function PlasmicHomepage__RenderFunc(props: {
               <div className={classNames(projectcss.all, sty.column__bd0Pk)} />
             </p.Stack>
           </p.Stack>
-          <section
-            data-plasmic-name={"section"}
-            data-plasmic-override={overrides.section}
-            className={classNames(projectcss.all, sty.section)}
-          />
-
           <Section
-            data-plasmic-name={"valuePropsSection"}
-            data-plasmic-override={overrides.valuePropsSection}
-            className={classNames("__wab_instance", sty.valuePropsSection)}
+            data-plasmic-name={"tentangsection"}
+            data-plasmic-override={overrides.tentangsection}
+            className={classNames("__wab_instance", sty.tentangsection)}
           >
             <p.Stack
               as={"div"}
@@ -1176,8 +1194,7 @@ const PlasmicDescendants = {
     "root",
     "headerHeroSection",
     "navbar",
-    "section",
-    "valuePropsSection",
+    "tentangsection",
     "checkpointsSection",
     "button",
     "h3",
@@ -1192,8 +1209,7 @@ const PlasmicDescendants = {
   ],
   headerHeroSection: ["headerHeroSection", "navbar"],
   navbar: ["navbar"],
-  section: ["section"],
-  valuePropsSection: ["valuePropsSection"],
+  tentangsection: ["tentangsection"],
   checkpointsSection: ["checkpointsSection", "button"],
   button: ["button"],
   h3: ["h3"],
@@ -1213,8 +1229,7 @@ type NodeDefaultElementType = {
   root: "div";
   headerHeroSection: "div";
   navbar: typeof Navbar;
-  section: "section";
-  valuePropsSection: typeof Section;
+  tentangsection: typeof Section;
   checkpointsSection: typeof Section;
   button: typeof Button;
   h3: "h3";
@@ -1290,8 +1305,7 @@ export const PlasmicHomepage = Object.assign(
     // Helper components rendering sub-elements
     headerHeroSection: makeNodeComponent("headerHeroSection"),
     navbar: makeNodeComponent("navbar"),
-    section: makeNodeComponent("section"),
-    valuePropsSection: makeNodeComponent("valuePropsSection"),
+    tentangsection: makeNodeComponent("tentangsection"),
     checkpointsSection: makeNodeComponent("checkpointsSection"),
     button: makeNodeComponent("button"),
     h3: makeNodeComponent("h3"),
@@ -1310,9 +1324,11 @@ export const PlasmicHomepage = Object.assign(
 
     // Page metadata
     pageMetadata: {
-      title: "Home",
-      description: "",
-      ogImageSrc: "",
+      title: "DekaCell : Servis HP Pekalongan",
+      description:
+        "Servis HP Pekalongan menangani servis Hardware dan Software HP di Pekalongan. Bisa ditunggu untuk kerusakan sederhana",
+      ogImageSrc:
+        "https://site-assets.plasmic.app/5f2806c24456e3a0067d3cca570fa287.jpg",
       canonical: ""
     }
   }

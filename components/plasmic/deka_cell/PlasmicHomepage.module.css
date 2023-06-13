@@ -16,7 +16,7 @@
   left: auto;
   right: auto;
   z-index: auto;
-  background: url("/plasmic/deka_cell/images/_3476572461042979693392495594533595071774500Njpg.jpg") top 10% left 50% / contain no-repeat;
+  background: url("/plasmic/deka_cell/images/_3476572461042979693392495594533595071774500Njpg.jpg") top 10% left 50% / cover no-repeat;
   margin-bottom: 10px;
   margin-right: 0px;
   align-self: stretch;
@@ -1239,6 +1239,13 @@
 .testimonialsSection:global(.__wab_instance) {
   position: relative;
 }
+.h4 {
+  position: relative;
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  min-width: 0;
+}
 .columns__akp2S {
   max-width: var(--token-XcYFiwcUDH49lOy);
   display: flex;
@@ -1384,6 +1391,8 @@
 }
 .callToActionSection:global(.__wab_instance) {
   position: relative;
+  height: 513px;
+  flex-shrink: 0;
 }
 .freeBox__d937C {
   display: flex;
@@ -1427,6 +1436,7 @@
   font-size: 20px;
   color: var(--token-U5I3m0smg6O5m0v);
   line-height: 28px;
+  margin-bottom: 55px;
 }
 .kolomKontak__c8UPz:global(.__wab_instance) {
   max-width: 100%;

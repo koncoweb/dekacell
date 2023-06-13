@@ -38,21 +38,13 @@ import {
 } from "@plasmicapp/react-web";
 import Navbar from "../../Navbar"; // plasmic-import: E68qrDQCcYGuytT/component
 import ValueProp from "../../ValueProp"; // plasmic-import: bjiW3HuNh1M7Jjd/component
-import PriceCard from "../../PriceCard"; // plasmic-import: l-WFqa9E_5r9dDj/component
+import KolomKontak from "../../KolomKontak"; // plasmic-import: yBAyndXdAN/component
 import FooterSection from "../../FooterSection"; // plasmic-import: nGsC6Y1BsR3DqYF/component
-
-import { useScreenVariants as useScreenVariantsqHr8XyK5HNLc7Z } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: QHr8XyK5hNLc7Z_/globalVariant
 
 import "@plasmicapp/react-web/lib/plasmic.css";
 
 import projectcss from "./plasmic_deka_cell.module.css"; // plasmic-import: 5W4T71ZWGdu6kYqLvuuQ3N/projectcss
 import sty from "./PlasmicServices.module.css"; // plasmic-import: PIO5vM9nFXA9SKL/css
-
-import HammerIcon from "./icons/PlasmicIcon__Hammer"; // plasmic-import: -cnqObQkbOcNQgi/icon
-import TargetIcon from "./icons/PlasmicIcon__Target"; // plasmic-import: wMBQ1XNz-iMYqFD/icon
-import FastIcon from "./icons/PlasmicIcon__Fast"; // plasmic-import: hxG6BtnXRBaLBgf/icon
-import StrongIcon from "./icons/PlasmicIcon__Strong"; // plasmic-import: FX_L1kytKQtJ_dE/icon
-import CheckIcon from "./icons/PlasmicIcon__Check"; // plasmic-import: G1KExKKDBFUnOuW/icon
 
 export type PlasmicServices__VariantMembers = {};
 export type PlasmicServices__VariantsArgs = {};
@@ -67,11 +59,12 @@ export type PlasmicServices__OverridesType = {
   root?: p.Flex<"div">;
   navbar?: p.Flex<typeof Navbar>;
   foreground?: p.Flex<"div">;
-  foreground2?: p.Flex<"div">;
+  h1?: p.Flex<"h1">;
+  foreground2?: p.Flex<"dl">;
+  foreground4?: p.Flex<"div">;
+  foreground5?: p.Flex<"div">;
   section?: p.Flex<"section">;
   foreground3?: p.Flex<"div">;
-  h2?: p.Flex<"h2">;
-  columns?: p.Flex<"div">;
   footerSection?: p.Flex<typeof FooterSection>;
 };
 
@@ -113,10 +106,6 @@ function PlasmicServices__RenderFunc(props: {
   const currentUser = p.useCurrentUser?.() || {};
 
   const [$queries, setDollarQueries] = React.useState({});
-
-  const globalVariants = ensureGlobalVariants({
-    screen: useScreenVariantsqHr8XyK5HNLc7Z()
-  });
 
   return (
     <React.Fragment>
@@ -174,15 +163,28 @@ function PlasmicServices__RenderFunc(props: {
               hasGap={true}
               className={classNames(projectcss.all, sty.foreground)}
             >
-              <div
+              <h1
+                data-plasmic-name={"h1"}
+                data-plasmic-override={overrides.h1}
                 className={classNames(
                   projectcss.all,
+                  projectcss.h1,
                   projectcss.__wab_text,
-                  sty.text__mulYn
+                  sty.h1
                 )}
               >
-                {"Our services"}
-              </div>
+                {"Layanan Kami"}
+              </h1>
+              <h2
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h2,
+                  projectcss.__wab_text,
+                  sty.h2__eRly1
+                )}
+              >
+                {"Kerusakan Hardware"}
+              </h2>
               <div
                 className={classNames(
                   projectcss.all,
@@ -191,12 +193,12 @@ function PlasmicServices__RenderFunc(props: {
                 )}
               >
                 {
-                  "A euismod eros a hendrerit tristique suscipit sit aptent dolor adipiscing inceptos cras ullamcorper a vivamus parturient."
+                  "Kami DekaCell Pekalongan memperbaiki beberapa masalah kerusakan hardware HP di Pekalongan seperti"
                 }
               </div>
             </p.Stack>
             <p.Stack
-              as={"div"}
+              as={"dl"}
               data-plasmic-name={"foreground2"}
               data-plasmic-override={overrides.foreground2}
               hasGap={true}
@@ -206,7 +208,7 @@ function PlasmicServices__RenderFunc(props: {
                 card={true}
                 className={classNames("__wab_instance", sty.valueProp__tXoae)}
                 description={
-                  "Quis iaculis tempor a condimentum per eu montes quis inceptos mi et dis suspendisse integer dui. Orci ad pharetra a vestibulum parturient mauris ac nisl cursus at a vestibulum morbi conubia suspendisse massa vestibulum a varius."
+                  "Masalah ini dapat disebabkan oleh beberapa faktor seperti volume yang terlalu rendah, speaker yang rusak, atau masalah pada software. Untuk memperbaikinya, Anda dapat mencoba mengatur ulang volume atau melakukan reset pada HP Anda. Jika masalah masih berlanjut, sebaiknya Anda membawa HP Anda ke service center terdekat untuk diperbaiki."
                 }
                 icon={
                   <p.PlasmicImg
@@ -226,14 +228,14 @@ function PlasmicServices__RenderFunc(props: {
                     }}
                   />
                 }
-                title={"Accomplish more"}
+                title={"Servis HP tidak keluar suara : "}
               />
 
               <ValueProp
                 card={true}
                 className={classNames("__wab_instance", sty.valueProp__gyVa8)}
                 description={
-                  "Ut interdum consectetur a interdum parturient blandit vestibulum vel quisque quis lorem libero imperdiet a sed massa quisque rhoncus sed cum quisque morbi."
+                  "Servis IC Power HP rusak di Pekalongan : IC Power adalah komponen yang bertanggung jawab untuk mengatur daya listrik pada HP. Jika IC Power rusak, maka HP Anda tidak akan bisa dinyalakan. Untuk memperbaikinya, Anda perlu membawa HP Anda ke service center terdekat untuk diperbaiki."
                 }
                 icon={
                   <p.PlasmicImg
@@ -253,14 +255,14 @@ function PlasmicServices__RenderFunc(props: {
                     }}
                   />
                 }
-                title={"Best-in-class"}
+                title={"IC Power rusak"}
               />
 
               <ValueProp
                 card={true}
                 className={classNames("__wab_instance", sty.valueProp__w2BlK)}
                 description={
-                  "Ullamcorper adipiscing adipiscing euismod odio nascetur eu magnis pretium arcu fermentum a eget cubilia tempor. Eu cubilia sodales vestibulum massa non ipsum consectetur lorem nibh parturient parturient vestibulum cum cras penatibus donec dui sit sed eleifend conubia condimentum parturient rutrum."
+                  "Perbaikan IC Sinyal rusak: Jika IC Sinyal rusak, maka HP Anda tidak akan bisa menerima sinyal dari jaringan seluler. Untuk memperbaikinya, Anda perlu membawa HP Anda ke service center terdekat untuk diperbaiki."
                 }
                 icon={
                   <p.PlasmicImg
@@ -273,21 +275,21 @@ function PlasmicServices__RenderFunc(props: {
                     displayMinWidth={"0" as const}
                     displayWidth={"56px" as const}
                     src={{
-                      src: "/plasmic/deka_cell/images/medal.png",
+                      src: "/plasmic/deka_cell/images/chart.png",
                       fullWidth: 144,
                       fullHeight: 144,
                       aspectRatio: undefined
                     }}
                   />
                 }
-                title={"Championship award-winners"}
+                title={"IC Sinyal rusak"}
               />
 
               <ValueProp
                 card={true}
                 className={classNames("__wab_instance", sty.valueProp___3LDpc)}
                 description={
-                  "Est parturient imperdiet proin inceptos parturient dignissim risus auctor cubilia cum iaculis eu feugiat justo eu vel at non nisl laoreet ligula porttitor a nunc ac cum habitant urna."
+                  "IC Charger rusak: Ciri - ciri : bila charger anda bekerja dengan baik namun HP tidak mau terisi saat di charge . Jika IC Charger rusak, maka HP Anda tidak akan bisa diisi daya. Untuk memperbaikinya, Anda perlu membawa HP Anda ke service center terdekat untuk diperbaiki."
                 }
                 icon={
                   <p.PlasmicImg
@@ -300,14 +302,195 @@ function PlasmicServices__RenderFunc(props: {
                     displayMinWidth={"0" as const}
                     displayWidth={"56px" as const}
                     src={{
-                      src: "/plasmic/deka_cell/images/trophy.png",
+                      src: "/plasmic/deka_cell/images/sparkle.png",
                       fullWidth: 144,
                       fullHeight: 144,
                       aspectRatio: undefined
                     }}
                   />
                 }
-                title={"Destined for greatness"}
+                title={"IC Charger rusak"}
+              />
+
+              <ValueProp
+                card={true}
+                className={classNames("__wab_instance", sty.valueProp___4Sxtj)}
+                description={
+                  "Konektor Charger rusak: Jika konektor charger rusak, maka HP Anda tidak akan bisa diisi daya. Untuk memperbaikinya, Anda perlu membawa HP Anda ke service center terdekat untuk diperbaiki."
+                }
+                icon={
+                  <p.PlasmicImg
+                    alt={""}
+                    className={classNames(sty.img___1NZaI)}
+                    displayHeight={"56px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"56px" as const}
+                    src={{
+                      src: "/plasmic/deka_cell/images/chart.png",
+                      fullWidth: 144,
+                      fullHeight: 144,
+                      aspectRatio: undefined
+                    }}
+                  />
+                }
+                title={"Konektor Charger / Cas"}
+              />
+
+              <ValueProp
+                card={true}
+                className={classNames("__wab_instance", sty.valueProp__kkvFp)}
+                description={
+                  "Kami juga bisa menservis Touchscreen bergerak sendiri / layar blank / dan masalah LCD lainnya: Masalah ini dapat disebabkan oleh beberapa faktor seperti kerusakan pada layar sentuh atau LCD. Untuk memperbaikinya, Anda perlu membawa HP Anda ke service center terdekat untuk diperbaiki."
+                }
+                icon={
+                  <p.PlasmicImg
+                    alt={""}
+                    className={classNames(sty.img__iAap)}
+                    displayHeight={"56px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"56px" as const}
+                    src={{
+                      src: "/plasmic/deka_cell/images/chart.png",
+                      fullWidth: 144,
+                      fullHeight: 144,
+                      aspectRatio: undefined
+                    }}
+                  />
+                }
+                title={"Layar sentuh bergerak sendiri"}
+              />
+
+              <ValueProp
+                card={true}
+                className={classNames("__wab_instance", sty.valueProp__y6MM8)}
+                description={
+                  "Port headset tidak berfungsi: Masalah ini dapat disebabkan oleh beberapa faktor seperti kotoran atau debu yang menumpuk di dalam port headset atau kerusakan pada port headset itu sendiri. Untuk memperbaikinya, Anda dapat mencoba membersihkan port headset dengan hati-hati atau membawa HP Anda ke service center terdekat untuk diperbaiki."
+                }
+                icon={
+                  <p.PlasmicImg
+                    alt={""}
+                    className={classNames(sty.img__dzUhL)}
+                    displayHeight={"56px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"56px" as const}
+                    src={{
+                      src: "/plasmic/deka_cell/images/chart.png",
+                      fullWidth: 144,
+                      fullHeight: 144,
+                      aspectRatio: undefined
+                    }}
+                  />
+                }
+                title={"Port / Lubang colokan Headset Rusak"}
+              />
+
+              <ValueProp
+                card={true}
+                className={classNames("__wab_instance", sty.valueProp___9E9PI)}
+                description={
+                  "Ganti tombol power HP: Masalah ini dapat disebabkan oleh kerusakan pada tombol power itu sendiri. Untuk memperbaikinya, Anda perlu membawa HP Anda ke service center terdekat untuk diperbaiki."
+                }
+                icon={
+                  <p.PlasmicImg
+                    alt={""}
+                    className={classNames(sty.img__oioQi)}
+                    displayHeight={"56px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"56px" as const}
+                    src={{
+                      src: "/plasmic/deka_cell/images/chart.png",
+                      fullWidth: 144,
+                      fullHeight: 144,
+                      aspectRatio: undefined
+                    }}
+                  />
+                }
+                title={"Tombol power tidak bisa dipencet"}
+              />
+
+              <KolomKontak
+                className={classNames("__wab_instance", sty.kolomKontak__iti4M)}
+              />
+            </p.Stack>
+          </p.Stack>
+          <p.Stack
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox___5Xh8H)}
+          >
+            <p.Stack
+              as={"div"}
+              data-plasmic-name={"foreground4"}
+              data-plasmic-override={overrides.foreground4}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.foreground4)}
+            >
+              <h2
+                className={classNames(
+                  projectcss.all,
+                  projectcss.h2,
+                  projectcss.__wab_text,
+                  sty.h2___0Eeey
+                )}
+              >
+                {"Kerusakan Software"}
+              </h2>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__u6Hr8
+                )}
+              >
+                {
+                  "Kami juga bisa membantu memperbaiki kerusakan Software HP android anda"
+                }
+              </div>
+            </p.Stack>
+            <p.Stack
+              as={"div"}
+              data-plasmic-name={"foreground5"}
+              data-plasmic-override={overrides.foreground5}
+              hasGap={true}
+              className={classNames(projectcss.all, sty.foreground5)}
+            >
+              <ValueProp
+                card={true}
+                className={classNames("__wab_instance", sty.valueProp__pZjMy)}
+                description={
+                  "HP sering hang atau macet\nHP sering update sendiri\nSinyal HP tidak keluar\nInternet sering disconnect sendiri\nRAM HP penuh\nMemori HP penuh\nAda notifikasi mengganggu\nAda iklan muncul"
+                }
+                icon={
+                  <p.PlasmicImg
+                    alt={""}
+                    className={classNames(sty.img__l0I6D)}
+                    displayHeight={"56px" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"none" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"56px" as const}
+                    src={{
+                      src: "/plasmic/deka_cell/images/chart.png",
+                      fullWidth: 144,
+                      fullHeight: 144,
+                      aspectRatio: undefined
+                    }}
+                  />
+                }
+                title={"Kerusakan Software yang ditangani DeKaCell"}
               />
             </p.Stack>
           </p.Stack>
@@ -332,16 +515,14 @@ function PlasmicServices__RenderFunc(props: {
                   className={classNames(projectcss.all, sty.freeBox___0VJ9H)}
                 >
                   <h2
-                    data-plasmic-name={"h2"}
-                    data-plasmic-override={overrides.h2}
                     className={classNames(
                       projectcss.all,
                       projectcss.h2,
                       projectcss.__wab_text,
-                      sty.h2
+                      sty.h2__mki28
                     )}
                   >
-                    {"Next-level"}
+                    {"Hubungi Kami"}
                   </h2>
                 </div>
                 <div
@@ -351,7 +532,7 @@ function PlasmicServices__RenderFunc(props: {
                     sty.text__oFj0S
                   )}
                 >
-                  {"Dui urna enim a tempus commodo adipiscing ullamcorper."}
+                  {"Kami bantu kembalikan HP Anda ke Kondisi Prima"}
                 </div>
               </p.Stack>
               <p.Stack
@@ -359,503 +540,15 @@ function PlasmicServices__RenderFunc(props: {
                 hasGap={true}
                 className={classNames(projectcss.all, sty.freeBox__eE09R)}
               >
-                <p.Stack
-                  as={"div"}
-                  data-plasmic-name={"columns"}
-                  data-plasmic-override={overrides.columns}
-                  hasGap={true}
-                  className={classNames(projectcss.all, sty.columns)}
-                >
-                  <div
-                    className={classNames(projectcss.all, sty.column___4QzQy)}
-                  >
-                    <ValueProp
-                      className={classNames(
-                        "__wab_instance",
-                        sty.valueProp__bXpI4
-                      )}
-                      darkBackground={true}
-                      description={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__hidcU
-                          )}
-                        >
-                          {
-                            "Nulla odio mauris enim parturient adipiscing vestibulum inceptos."
-                          }
-                        </div>
-                      }
-                      icon={
-                        <HammerIcon
-                          className={classNames(projectcss.all, sty.svg__oaVc9)}
-                          role={"img"}
-                        />
-                      }
-                      title={"Harder"}
-                      vertical={true}
-                    />
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.column__wFDxT)}
-                  >
-                    <ValueProp
-                      className={classNames(
-                        "__wab_instance",
-                        sty.valueProp__k7FQw
-                      )}
-                      darkBackground={true}
-                      description={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__vOuTs
-                          )}
-                        >
-                          {
-                            "Consequat scelerisque a eros taciti nisl a sodales."
-                          }
-                        </div>
-                      }
-                      icon={
-                        <TargetIcon
-                          className={classNames(projectcss.all, sty.svg__oAypv)}
-                          role={"img"}
-                        />
-                      }
-                      title={"Better"}
-                      vertical={true}
-                    />
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.column__dG3TQ)}
-                  >
-                    <ValueProp
-                      className={classNames(
-                        "__wab_instance",
-                        sty.valueProp__oKjeJ
-                      )}
-                      darkBackground={true}
-                      description={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text___5TvWh
-                          )}
-                        >
-                          {
-                            "Varius ad malesuada ullamcorper cursus scelerisque a a."
-                          }
-                        </div>
-                      }
-                      icon={
-                        <FastIcon
-                          className={classNames(projectcss.all, sty.svg__eKJb)}
-                          role={"img"}
-                        />
-                      }
-                      title={"Faster"}
-                      vertical={true}
-                    />
-                  </div>
-                  <div
-                    className={classNames(projectcss.all, sty.column___3Hzon)}
-                  >
-                    <ValueProp
-                      className={classNames(
-                        "__wab_instance",
-                        sty.valueProp__oRzqm
-                      )}
-                      darkBackground={true}
-                      description={
-                        <div
-                          className={classNames(
-                            projectcss.all,
-                            projectcss.__wab_text,
-                            sty.text__suVna
-                          )}
-                        >
-                          {
-                            "Ut eu nam nostra taciti congue adipiscing curabitur."
-                          }
-                        </div>
-                      }
-                      icon={
-                        <StrongIcon
-                          className={classNames(projectcss.all, sty.svg__x9Qf4)}
-                          role={"img"}
-                        />
-                      }
-                      title={"Stronger"}
-                      vertical={true}
-                    />
-                  </div>
-                </p.Stack>
+                <KolomKontak
+                  className={classNames(
+                    "__wab_instance",
+                    sty.kolomKontak___42Lr5
+                  )}
+                />
               </p.Stack>
             </p.Stack>
           </section>
-          <p.Stack
-            as={"div"}
-            hasGap={true}
-            className={classNames(projectcss.all, sty.freeBox__vG3P)}
-          >
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox__x3G6R)}
-            >
-              <p.Stack
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__gJjpc)}
-              >
-                <div className={classNames(projectcss.all, sty.freeBox__fh92V)}>
-                  <div
-                    className={classNames(
-                      projectcss.all,
-                      projectcss.__wab_text,
-                      sty.text__sMf2F
-                    )}
-                  >
-                    {"Pricing plans"}
-                  </div>
-                </div>
-                <div
-                  className={classNames(
-                    projectcss.all,
-                    projectcss.__wab_text,
-                    sty.text__pl24S
-                  )}
-                >
-                  {
-                    "Nascetur nascetur ridiculus scelerisque adipiscing a nascetur varius sed eu a ad semper a est nec litora ante at orci rhoncus a varius auctor aliquam inceptos vestibulum ridiculus."
-                  }
-                </div>
-              </p.Stack>
-              <p.Stack
-                as={"div"}
-                hasGap={true}
-                className={classNames(projectcss.all, sty.freeBox__vw1Ng)}
-              >
-                <PriceCard
-                  className={classNames("__wab_instance", sty.priceCard__an3Id)}
-                  description={
-                    <React.Fragment>
-                      <ValueProp
-                        className={classNames(
-                          "__wab_instance",
-                          sty.valueProp__yiPls
-                        )}
-                        description={"Nulla odio mauris."}
-                        flatIcon={true}
-                        icon={
-                          <CheckIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__xj1IJ
-                            )}
-                            role={"img"}
-                          />
-                        }
-                        noTitle={true}
-                      />
-
-                      <ValueProp
-                        className={classNames(
-                          "__wab_instance",
-                          sty.valueProp__t5Hhc
-                        )}
-                        description={"Nulla odio mauris."}
-                        flatIcon={true}
-                        icon={
-                          <CheckIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg___1NegA
-                            )}
-                            role={"img"}
-                          />
-                        }
-                        noTitle={true}
-                      />
-                    </React.Fragment>
-                  }
-                  dollars={"0"}
-                />
-
-                <PriceCard
-                  className={classNames("__wab_instance", sty.priceCard__qrsBl)}
-                  description={
-                    <React.Fragment>
-                      <ValueProp
-                        className={classNames(
-                          "__wab_instance",
-                          sty.valueProp__yjevD
-                        )}
-                        description={"Nulla odio mauris."}
-                        flatIcon={true}
-                        icon={
-                          <CheckIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__fgBc0
-                            )}
-                            role={"img"}
-                          />
-                        }
-                        noTitle={true}
-                      />
-
-                      <ValueProp
-                        className={classNames(
-                          "__wab_instance",
-                          sty.valueProp__qe0Dd
-                        )}
-                        description={"Nulla odio mauris."}
-                        flatIcon={true}
-                        icon={
-                          <CheckIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__eYkb
-                            )}
-                            role={"img"}
-                          />
-                        }
-                        noTitle={true}
-                      />
-
-                      <ValueProp
-                        className={classNames(
-                          "__wab_instance",
-                          sty.valueProp__qdBav
-                        )}
-                        description={"Nulla odio mauris."}
-                        flatIcon={true}
-                        icon={
-                          <CheckIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg___6MVqi
-                            )}
-                            role={"img"}
-                          />
-                        }
-                        noTitle={true}
-                      />
-                    </React.Fragment>
-                  }
-                  dollars={"8"}
-                  label={
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__dpmo
-                      )}
-                    >
-                      {"Pro"}
-                    </div>
-                  }
-                />
-
-                <PriceCard
-                  className={classNames("__wab_instance", sty.priceCard__sPea6)}
-                  description={
-                    <React.Fragment>
-                      <ValueProp
-                        className={classNames(
-                          "__wab_instance",
-                          sty.valueProp__vnvpO
-                        )}
-                        description={"Nulla odio mauris."}
-                        flatIcon={true}
-                        icon={
-                          <CheckIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg___0EtWp
-                            )}
-                            role={"img"}
-                          />
-                        }
-                        noTitle={true}
-                      />
-
-                      <ValueProp
-                        className={classNames(
-                          "__wab_instance",
-                          sty.valueProp__sks18
-                        )}
-                        description={"Nulla odio mauris."}
-                        flatIcon={true}
-                        icon={
-                          <CheckIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__ygPEt
-                            )}
-                            role={"img"}
-                          />
-                        }
-                        noTitle={true}
-                      />
-
-                      <ValueProp
-                        className={classNames(
-                          "__wab_instance",
-                          sty.valueProp__yzOeD
-                        )}
-                        description={"Nulla odio mauris."}
-                        flatIcon={true}
-                        icon={
-                          <CheckIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__hzEOx
-                            )}
-                            role={"img"}
-                          />
-                        }
-                        noTitle={true}
-                      />
-
-                      <ValueProp
-                        className={classNames(
-                          "__wab_instance",
-                          sty.valueProp__sc3Sv
-                        )}
-                        description={"Nulla odio mauris."}
-                        flatIcon={true}
-                        icon={
-                          <CheckIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__i8SIh
-                            )}
-                            role={"img"}
-                          />
-                        }
-                        noTitle={true}
-                      />
-                    </React.Fragment>
-                  }
-                  dollars={"16"}
-                  label={
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text__pjJcp
-                      )}
-                    >
-                      {"Team"}
-                    </div>
-                  }
-                />
-
-                <PriceCard
-                  className={classNames("__wab_instance", sty.priceCard__c659O)}
-                  description={
-                    <React.Fragment>
-                      <ValueProp
-                        className={classNames(
-                          "__wab_instance",
-                          sty.valueProp__rkIbv
-                        )}
-                        description={"Nulla odio mauris."}
-                        flatIcon={true}
-                        icon={
-                          <CheckIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__picKb
-                            )}
-                            role={"img"}
-                          />
-                        }
-                        noTitle={true}
-                      />
-
-                      <ValueProp
-                        className={classNames(
-                          "__wab_instance",
-                          sty.valueProp__rUbr2
-                        )}
-                        description={"Nulla odio mauris."}
-                        flatIcon={true}
-                        icon={
-                          <CheckIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__kmzvk
-                            )}
-                            role={"img"}
-                          />
-                        }
-                        noTitle={true}
-                      />
-
-                      <ValueProp
-                        className={classNames(
-                          "__wab_instance",
-                          sty.valueProp___5PqGa
-                        )}
-                        description={"Nulla odio mauris."}
-                        flatIcon={true}
-                        icon={
-                          <CheckIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__gXpjo
-                            )}
-                            role={"img"}
-                          />
-                        }
-                        noTitle={true}
-                      />
-
-                      <ValueProp
-                        className={classNames(
-                          "__wab_instance",
-                          sty.valueProp__nh7RV
-                        )}
-                        description={"Nulla odio mauris."}
-                        flatIcon={true}
-                        icon={
-                          <CheckIcon
-                            className={classNames(
-                              projectcss.all,
-                              sty.svg__uXpYp
-                            )}
-                            role={"img"}
-                          />
-                        }
-                        noTitle={true}
-                      />
-                    </React.Fragment>
-                  }
-                  dollars={"?"}
-                  label={
-                    <div
-                      className={classNames(
-                        projectcss.all,
-                        projectcss.__wab_text,
-                        sty.text___6ZCZd
-                      )}
-                    >
-                      {"Enterprise"}
-                    </div>
-                  }
-                  primary={true}
-                />
-              </p.Stack>
-            </p.Stack>
-          </p.Stack>
           <FooterSection
             data-plasmic-name={"footerSection"}
             data-plasmic-override={overrides.footerSection}
@@ -872,20 +565,22 @@ const PlasmicDescendants = {
     "root",
     "navbar",
     "foreground",
+    "h1",
     "foreground2",
+    "foreground4",
+    "foreground5",
     "section",
     "foreground3",
-    "h2",
-    "columns",
     "footerSection"
   ],
   navbar: ["navbar"],
-  foreground: ["foreground"],
+  foreground: ["foreground", "h1"],
+  h1: ["h1"],
   foreground2: ["foreground2"],
-  section: ["section", "foreground3", "h2", "columns"],
-  foreground3: ["foreground3", "h2", "columns"],
-  h2: ["h2"],
-  columns: ["columns"],
+  foreground4: ["foreground4"],
+  foreground5: ["foreground5"],
+  section: ["section", "foreground3"],
+  foreground3: ["foreground3"],
   footerSection: ["footerSection"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
@@ -895,11 +590,12 @@ type NodeDefaultElementType = {
   root: "div";
   navbar: typeof Navbar;
   foreground: "div";
-  foreground2: "div";
+  h1: "h1";
+  foreground2: "dl";
+  foreground4: "div";
+  foreground5: "div";
   section: "section";
   foreground3: "div";
-  h2: "h2";
-  columns: "div";
   footerSection: typeof FooterSection;
 };
 
@@ -965,11 +661,12 @@ export const PlasmicServices = Object.assign(
     // Helper components rendering sub-elements
     navbar: makeNodeComponent("navbar"),
     foreground: makeNodeComponent("foreground"),
+    h1: makeNodeComponent("h1"),
     foreground2: makeNodeComponent("foreground2"),
+    foreground4: makeNodeComponent("foreground4"),
+    foreground5: makeNodeComponent("foreground5"),
     section: makeNodeComponent("section"),
     foreground3: makeNodeComponent("foreground3"),
-    h2: makeNodeComponent("h2"),
-    columns: makeNodeComponent("columns"),
     footerSection: makeNodeComponent("footerSection"),
 
     // Metadata about props expected for PlasmicServices

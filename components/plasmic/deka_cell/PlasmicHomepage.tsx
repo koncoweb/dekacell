@@ -85,6 +85,7 @@ export type PlasmicHomepage__OverridesType = {
   pricingSection?: p.Flex<typeof Section>;
   shopBannersSection?: p.Flex<typeof Section>;
   testimonialsSection?: p.Flex<typeof Section>;
+  h4?: p.Flex<"h4">;
   callToActionSection?: p.Flex<typeof CallToActionSection>;
   footerSection?: p.Flex<typeof FooterSection>;
 };
@@ -1000,6 +1001,18 @@ function PlasmicHomepage__RenderFunc(props: {
             background={"gray" as const}
             className={classNames("__wab_instance", sty.testimonialsSection)}
           >
+            <h4
+              data-plasmic-name={"h4"}
+              data-plasmic-override={overrides.h4}
+              className={classNames(
+                projectcss.all,
+                projectcss.h4,
+                projectcss.__wab_text,
+                sty.h4
+              )}
+            >
+              {"Testimony"}
+            </h4>
             <p.Stack
               as={"div"}
               hasGap={true}
@@ -1036,7 +1049,7 @@ function PlasmicHomepage__RenderFunc(props: {
                     fullHeight: 280,
                     aspectRatio: undefined
                   }}
-                  name={"Elaine Benes"}
+                  name={"Iriana"}
                   quote={
                     <div
                       className={classNames(
@@ -1063,7 +1076,7 @@ function PlasmicHomepage__RenderFunc(props: {
                       </React.Fragment>
                     </div>
                   }
-                  title={"Editor, Pendant Publishing"}
+                  title={"Ibu Rumah Tangga"}
                 />
               </div>
               <div className={classNames(projectcss.all, sty.column__bzIEk)}>
@@ -1173,6 +1186,7 @@ const PlasmicDescendants = {
     "pricingSection",
     "shopBannersSection",
     "testimonialsSection",
+    "h4",
     "callToActionSection",
     "footerSection"
   ],
@@ -1187,7 +1201,8 @@ const PlasmicDescendants = {
   embedHtml: ["embedHtml"],
   pricingSection: ["pricingSection"],
   shopBannersSection: ["shopBannersSection"],
-  testimonialsSection: ["testimonialsSection"],
+  testimonialsSection: ["testimonialsSection", "h4"],
+  h4: ["h4"],
   callToActionSection: ["callToActionSection"],
   footerSection: ["footerSection"]
 } as const;
@@ -1208,6 +1223,7 @@ type NodeDefaultElementType = {
   pricingSection: typeof Section;
   shopBannersSection: typeof Section;
   testimonialsSection: typeof Section;
+  h4: "h4";
   callToActionSection: typeof CallToActionSection;
   footerSection: typeof FooterSection;
 };
@@ -1284,6 +1300,7 @@ export const PlasmicHomepage = Object.assign(
     pricingSection: makeNodeComponent("pricingSection"),
     shopBannersSection: makeNodeComponent("shopBannersSection"),
     testimonialsSection: makeNodeComponent("testimonialsSection"),
+    h4: makeNodeComponent("h4"),
     callToActionSection: makeNodeComponent("callToActionSection"),
     footerSection: makeNodeComponent("footerSection"),
 

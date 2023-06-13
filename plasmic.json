@@ -302,6 +302,19 @@
           "cssFilePath": "plasmic/deka_cell/PlasmicKolomKontak.module.css",
           "scheme": "blackbox",
           "componentType": "component"
+        },
+        {
+          "id": "BJiRoLYqOBm",
+          "name": "Tentang",
+          "type": "managed",
+          "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
+          "renderModuleFilePath": "plasmic/deka_cell/PlasmicTentang.tsx",
+          "importSpec": {
+            "modulePath": "../pages/tentang.tsx"
+          },
+          "cssFilePath": "plasmic/deka_cell/PlasmicTentang.module.css",
+          "scheme": "blackbox",
+          "componentType": "page"
         }
       ],
       "icons": [

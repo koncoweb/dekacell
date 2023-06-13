@@ -252,7 +252,7 @@
 }
 @media (min-width: 0px) and (max-width: 768px) {
   .tentangsection:global(.__wab_instance) {
-    height: 1540px;
+    height: 1279px;
     flex-shrink: 0;
   }
 }
@@ -292,6 +292,11 @@
   color: var(--token-mKxumytFpK3K8OF);
   line-height: 1;
   padding-top: 0px;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .h2__eEtP {
+    font-size: 28px;
+  }
 }
 .text___86QIe {
   font-size: 20px;
@@ -890,6 +895,11 @@
   color: var(--token-qxPknjurOUltLIS);
   line-height: 1;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .text__gQiH8 {
+    font-size: 30px;
+  }
+}
 .text__xpMKi {
   font-size: 20px;
   color: var(--token-xr3yF5wp-tDdwEC);
@@ -936,6 +946,7 @@
     max-width: 1920px;
     width: 100%;
     height: auto;
+    padding-top: 0px;
     min-width: 0;
   }
 }
@@ -1151,6 +1162,12 @@
 .shopBannersSection:global(.__wab_instance) {
   position: relative;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .shopBannersSection:global(.__wab_instance) {
+    height: 418px;
+    flex-shrink: 0;
+  }
+}
 .freeBox__rnvh2 {
   display: flex;
   position: relative;
@@ -1182,11 +1199,6 @@
   .freeBox__rnvh2 {
     position: relative;
   }
-}
-.banner__reiCi:global(.__wab_instance) {
-  height: 971px;
-  margin-bottom: 0px;
-  flex-shrink: 0;
 }
 .freeBox__kwfWf {
   display: flex;
@@ -1247,6 +1259,23 @@
     > img {
     margin-left: 0px;
     margin-top: 32px;
+  }
+}
+.img {
+  position: relative;
+  object-fit: cover;
+  max-width: 100%;
+  display: none !important;
+}
+.img > picture > img {
+  object-fit: cover;
+}
+.img > :global(.__wab_img-spacer) > img {
+  object-fit: cover;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .img {
+    display: inline-block !important;
   }
 }
 .banner__kmXq0:global(.__wab_instance) {
@@ -1410,6 +1439,12 @@
   height: 513px;
   flex-shrink: 0;
 }
+@media (min-width: 0px) and (max-width: 768px) {
+  .callToActionSection:global(.__wab_instance) {
+    height: 1070px;
+    flex-shrink: 0;
+  }
+}
 .freeBox__d937C {
   display: flex;
   position: relative;
@@ -1460,4 +1495,10 @@
 }
 .footerSection:global(.__wab_instance) {
   position: relative;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .footerSection:global(.__wab_instance) {
+    height: 500px;
+    flex-shrink: 0;
+  }
 }

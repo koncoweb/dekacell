@@ -9,8 +9,15 @@
   position: relative;
   background: var(--token-myZxfJdq_yhOKlb);
   padding-bottom: 0px;
-  min-width: 0;
+  justify-self: flex-start;
+  grid-column-start: 3;
+  grid-column-end: -3;
   border-radius: 16px;
+}
+@media (min-width: 0px) and (max-width: 768px) {
+  .root {
+    background: none;
+  }
 }
 .right {
   display: flex;
@@ -40,19 +47,4 @@
 }
 .img > :global(.__wab_img-spacer) > img {
   object-fit: cover;
-}
-.gradient {
-  display: block;
-  position: absolute;
-  left: -31px;
-  top: 0;
-  width: auto;
-  height: auto;
-  right: 0;
-  bottom: 0;
-  background: linear-gradient(
-    90deg,
-    var(--token-myZxfJdq_yhOKlb) 0%,
-    #00000029 15%
-  );
 }

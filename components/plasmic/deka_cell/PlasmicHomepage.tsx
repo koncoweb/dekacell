@@ -83,6 +83,7 @@ export type PlasmicHomepage__OverridesType = {
   embedHtml?: p.Flex<typeof Embed>;
   pricingSection?: p.Flex<typeof Section>;
   shopBannersSection?: p.Flex<typeof Section>;
+  img?: p.Flex<typeof p.PlasmicImg>;
   testimonialsSection?: p.Flex<typeof Section>;
   h4?: p.Flex<"h4">;
   callToActionSection?: p.Flex<typeof CallToActionSection>;
@@ -909,10 +910,16 @@ function PlasmicHomepage__RenderFunc(props: {
                           sty.text__f5Dgv
                         )}
                       >
-                        {"Konsultasi Kerusakan Hardware"}
+                        {hasVariant(globalVariants, "screen", "mobileOnly")
+                          ? "Konsultasi Gratis"
+                          : "Konsultasi Kerusakan Hardware"}
                       </div>
                     }
-                    label={"Kerusakan Hardware"}
+                    label={
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? "Kerusakan Hardware"
+                        : "Kerusakan Hardware"
+                    }
                     primary={true}
                   />
                 </div>
@@ -958,7 +965,11 @@ function PlasmicHomepage__RenderFunc(props: {
                         />
                       </React.Fragment>
                     }
-                    dollars={"Konsultasi Kerusakan Software"}
+                    dollars={
+                      hasVariant(globalVariants, "screen", "mobileOnly")
+                        ? "Konsultasi Gratis"
+                        : "Konsultasi Kerusakan Software"
+                    }
                     label={"Kerusakan Software"}
                   />
                 </div>
@@ -976,16 +987,6 @@ function PlasmicHomepage__RenderFunc(props: {
               hasGap={true}
               className={classNames(projectcss.all, sty.freeBox__rnvh2)}
             >
-              <Banner
-                className={classNames("__wab_instance", sty.banner__reiCi)}
-                image={{
-                  src: "/plasmic/deka_cell/images/_34777482616548875416206324846814292638739147Njpg.jpg",
-                  fullWidth: 940,
-                  fullHeight: 788,
-                  aspectRatio: undefined
-                }}
-              />
-
               <p.Stack
                 as={"div"}
                 hasGap={true}
@@ -1001,6 +1002,31 @@ function PlasmicHomepage__RenderFunc(props: {
                   }}
                 />
 
+                {(
+                  hasVariant(globalVariants, "screen", "mobileOnly")
+                    ? true
+                    : true
+                ) ? (
+                  <p.PlasmicImg
+                    data-plasmic-name={"img"}
+                    data-plasmic-override={overrides.img}
+                    alt={""}
+                    className={classNames(sty.img)}
+                    displayHeight={"auto" as const}
+                    displayMaxHeight={"none" as const}
+                    displayMaxWidth={"100%" as const}
+                    displayMinHeight={"0" as const}
+                    displayMinWidth={"0" as const}
+                    displayWidth={"auto" as const}
+                    loading={"lazy" as const}
+                    src={{
+                      src: "/plasmic/deka_cell/images/_34777482616548875416206324846814292638739147Njpg.jpg",
+                      fullWidth: 940,
+                      fullHeight: 788,
+                      aspectRatio: undefined
+                    }}
+                  />
+                ) : null}
                 <Banner
                   className={classNames("__wab_instance", sty.banner__kmXq0)}
                   image={{
@@ -1202,6 +1228,7 @@ const PlasmicDescendants = {
     "embedHtml",
     "pricingSection",
     "shopBannersSection",
+    "img",
     "testimonialsSection",
     "h4",
     "callToActionSection",
@@ -1216,7 +1243,8 @@ const PlasmicDescendants = {
   address: ["address"],
   embedHtml: ["embedHtml"],
   pricingSection: ["pricingSection"],
-  shopBannersSection: ["shopBannersSection"],
+  shopBannersSection: ["shopBannersSection", "img"],
+  img: ["img"],
   testimonialsSection: ["testimonialsSection", "h4"],
   h4: ["h4"],
   callToActionSection: ["callToActionSection"],
@@ -1237,6 +1265,7 @@ type NodeDefaultElementType = {
   embedHtml: typeof Embed;
   pricingSection: typeof Section;
   shopBannersSection: typeof Section;
+  img: typeof p.PlasmicImg;
   testimonialsSection: typeof Section;
   h4: "h4";
   callToActionSection: typeof CallToActionSection;
@@ -1313,6 +1342,7 @@ export const PlasmicHomepage = Object.assign(
     embedHtml: makeNodeComponent("embedHtml"),
     pricingSection: makeNodeComponent("pricingSection"),
     shopBannersSection: makeNodeComponent("shopBannersSection"),
+    img: makeNodeComponent("img"),
     testimonialsSection: makeNodeComponent("testimonialsSection"),
     h4: makeNodeComponent("h4"),
     callToActionSection: makeNodeComponent("callToActionSection"),

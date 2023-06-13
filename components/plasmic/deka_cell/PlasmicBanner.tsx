@@ -57,7 +57,6 @@ export type PlasmicBanner__OverridesType = {
   root?: p.Flex<"div">;
   right?: p.Flex<"div">;
   img?: p.Flex<typeof p.PlasmicImg>;
-  gradient?: p.Flex<"div">;
 };
 
 export interface DefaultBannerProps {
@@ -149,24 +148,15 @@ function PlasmicBanner__RenderFunc(props: {
           displayWidth={"100%" as const}
           src={args.image}
         />
-
-        {true ? (
-          <div
-            data-plasmic-name={"gradient"}
-            data-plasmic-override={overrides.gradient}
-            className={classNames(projectcss.all, sty.gradient)}
-          />
-        ) : null}
       </div>
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "right", "img", "gradient"],
-  right: ["right", "img", "gradient"],
-  img: ["img"],
-  gradient: ["gradient"]
+  root: ["root", "right", "img"],
+  right: ["right", "img"],
+  img: ["img"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -175,7 +165,6 @@ type NodeDefaultElementType = {
   root: "div";
   right: "div";
   img: typeof p.PlasmicImg;
-  gradient: "div";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -240,7 +229,6 @@ export const PlasmicBanner = Object.assign(
     // Helper components rendering sub-elements
     right: makeNodeComponent("right"),
     img: makeNodeComponent("img"),
-    gradient: makeNodeComponent("gradient"),
 
     // Metadata about props expected for PlasmicBanner
     internalVariantProps: PlasmicBanner__VariantProps,

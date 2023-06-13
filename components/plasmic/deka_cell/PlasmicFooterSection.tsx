@@ -37,6 +37,7 @@ import {
   ensureGlobalVariants
 } from "@plasmicapp/react-web";
 import Logo from "../../Logo"; // plasmic-import: RcKSuSxU4hFDkbk/component
+import ButtonWa from "../../ButtonWa"; // plasmic-import: lC_mwoGu3T/component
 import Button from "../../Button"; // plasmic-import: OZSqee0ES_HTq_B/component
 
 import { useScreenVariants as useScreenVariantsqHr8XyK5HNLc7Z } from "./PlasmicGlobalVariant__Screen"; // plasmic-import: QHr8XyK5hNLc7Z_/globalVariant
@@ -46,9 +47,6 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_deka_cell.module.css"; // plasmic-import: 5W4T71ZWGdu6kYqLvuuQ3N/projectcss
 import sty from "./PlasmicFooterSection.module.css"; // plasmic-import: nGsC6Y1BsR3DqYF/css
 
-import TwitterIcon from "./icons/PlasmicIcon__Twitter"; // plasmic-import: 88D31V3xYgg7h5z/icon
-import GithubIcon from "./icons/PlasmicIcon__Github"; // plasmic-import: yAbVrlqIIHH4MiD/icon
-import LinkedinIcon from "./icons/PlasmicIcon__Linkedin"; // plasmic-import: 00jEJinkQzFjR_x/icon
 import AppleIcon from "./icons/PlasmicIcon__Apple"; // plasmic-import: kKNkwOGnEhqtvD_/icon
 
 export type PlasmicFooterSection__VariantMembers = {};
@@ -63,6 +61,8 @@ export const PlasmicFooterSection__ArgProps = new Array<ArgPropType>();
 export type PlasmicFooterSection__OverridesType = {
   root?: p.Flex<"div">;
   logo?: p.Flex<typeof Logo>;
+  buttonWa?: p.Flex<typeof ButtonWa>;
+  link?: p.Flex<"a"> & Partial<LinkProps>;
 };
 
 export interface DefaultFooterSectionProps {
@@ -139,6 +139,7 @@ function PlasmicFooterSection__RenderFunc(props: {
             data-plasmic-name={"logo"}
             data-plasmic-override={overrides.logo}
             _50Opaque={true}
+            className={classNames("__wab_instance")}
           />
 
           <p.Stack
@@ -146,210 +147,98 @@ function PlasmicFooterSection__RenderFunc(props: {
             hasGap={true}
             className={classNames(projectcss.all, sty.freeBox__bdd7Q)}
           >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text___3R4EB
-              )}
-            >
-              {"Connect with us"}
-            </div>
-            <p.Stack
-              as={"div"}
-              hasGap={true}
-              className={classNames(projectcss.all, sty.freeBox___4Hosp)}
-            >
-              <TwitterIcon
-                className={classNames(projectcss.all, sty.svg__bfpT0)}
-                role={"img"}
+            {(
+              hasVariant(globalVariants, "screen", "mobileOnly") ? true : true
+            ) ? (
+              <ButtonWa
+                data-plasmic-name={"buttonWa"}
+                data-plasmic-override={overrides.buttonWa}
+                className={classNames("__wab_instance", sty.buttonWa)}
               />
-
-              <GithubIcon
-                className={classNames(projectcss.all, sty.svg__vpgoy)}
-                role={"img"}
-              />
-
-              <LinkedinIcon
-                className={classNames(projectcss.all, sty.svg__zmbQb)}
-                role={"img"}
-              />
-            </p.Stack>
+            ) : null}
           </p.Stack>
         </p.Stack>
-        <p.Stack
-          as={"div"}
-          hasGap={true}
-          className={classNames(projectcss.all, sty.freeBox__gOzGs)}
-        >
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__p69MA
-            )}
-          >
-            {"Product"}
-          </div>
-          <Button
-            className={classNames("__wab_instance", sty.button__vwKyP)}
-            color={"navLink" as const}
-            flat={true}
-            submitsForm={true}
+        {(hasVariant(globalVariants, "screen", "mobileOnly") ? true : true) ? (
+          <p.Stack
+            as={"div"}
+            hasGap={true}
+            className={classNames(projectcss.all, sty.freeBox__gOzGs)}
           >
             <div
               className={classNames(
                 projectcss.all,
                 projectcss.__wab_text,
-                sty.text__hLn6S
+                sty.text__p69MA
               )}
             >
-              {"Pricing"}
+              {"Product"}
             </div>
-          </Button>
-          <Button
-            className={classNames("__wab_instance", sty.button__x3WNk)}
-            color={"navLink" as const}
-            flat={true}
-            submitsForm={true}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__dp46X
-              )}
+            <Button
+              className={classNames("__wab_instance", sty.button__vwKyP)}
+              color={"navLink" as const}
+              flat={true}
+              link={`/services`}
+              submitsForm={true}
             >
-              {"Log in"}
-            </div>
-          </Button>
-          <Button
-            className={classNames("__wab_instance", sty.button__s017C)}
-            color={"navLink" as const}
-            flat={true}
-            submitsForm={true}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__yfGxf
-              )}
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__hLn6S
+                )}
+              >
+                {"Layanan"}
+              </div>
+            </Button>
+            <Button
+              className={classNames("__wab_instance", sty.button__x3WNk)}
+              color={"navLink" as const}
+              flat={true}
+              link={`/tentang`}
+              submitsForm={true}
             >
-              {"Integrations"}
-            </div>
-          </Button>
-          <Button
-            className={classNames("__wab_instance", sty.button__ujzNe)}
-            color={"navLink" as const}
-            flat={true}
-            submitsForm={true}
-          >
-            <div
-              className={classNames(
-                projectcss.all,
-                projectcss.__wab_text,
-                sty.text__pgTLo
-              )}
-            >
-              {"Insights"}
-            </div>
-          </Button>
-        </p.Stack>
+              <div
+                className={classNames(
+                  projectcss.all,
+                  projectcss.__wab_text,
+                  sty.text__dp46X
+                )}
+              >
+                {"Tentang"}
+              </div>
+            </Button>
+          </p.Stack>
+        ) : null}
         <p.Stack
           as={"div"}
           hasGap={true}
           className={classNames(projectcss.all, sty.freeBox___81RHs)}
-        >
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text___6MBvz
-            )}
-          >
-            {"Support"}
-          </div>
-          <Button
-            className={classNames("__wab_instance", sty.button__gahWt)}
-            color={"navLink" as const}
-            flat={true}
-            submitsForm={true}
-          >
-            {"Documentation"}
-          </Button>
-          <Button
-            className={classNames("__wab_instance", sty.button__liz0F)}
-            color={"navLink" as const}
-            flat={true}
-            submitsForm={true}
-          >
-            {"FAQs"}
-          </Button>
-          <Button
-            className={classNames("__wab_instance", sty.button___6LaC)}
-            color={"navLink" as const}
-            flat={true}
-            submitsForm={true}
-          >
-            {"Status"}
-          </Button>
-        </p.Stack>
-        <p.Stack
-          as={"div"}
-          hasGap={true}
-          className={classNames(projectcss.all, sty.freeBox__ilf7L)}
-        >
-          <div
-            className={classNames(
-              projectcss.all,
-              projectcss.__wab_text,
-              sty.text__wQ8RS
-            )}
-          >
-            {"Company"}
-          </div>
-          <Button
-            className={classNames("__wab_instance", sty.button__orM9D)}
-            color={"navLink" as const}
-            flat={true}
-            submitsForm={true}
-          >
-            {"About"}
-          </Button>
-          <Button
-            className={classNames("__wab_instance", sty.button__qK86K)}
-            color={"navLink" as const}
-            flat={true}
-            submitsForm={true}
-          >
-            {"Contact us"}
-          </Button>
-          <Button
-            className={classNames("__wab_instance", sty.button___4EagW)}
-            color={"navLink" as const}
-            flat={true}
-            submitsForm={true}
-          >
-            {"Careers"}
-          </Button>
-          <Button
-            className={classNames("__wab_instance", sty.button__tBq4Q)}
-            color={"navLink" as const}
-            flat={true}
-            submitsForm={true}
-          >
-            {"Media"}
-          </Button>
-        </p.Stack>
+        />
       </p.Stack>
+      <p.PlasmicLink
+        data-plasmic-name={"link"}
+        data-plasmic-override={overrides.link}
+        className={classNames(
+          projectcss.all,
+          projectcss.a,
+          projectcss.__wab_text,
+          sty.link
+        )}
+        component={Link}
+        href={"https://koncoweb.my.id/" as const}
+        platform={"nextjs"}
+      >
+        {"Web Dibuat oleh Jasa Web Pekalongan"}
+      </p.PlasmicLink>
     </div>
   ) as React.ReactElement | null;
 }
 
 const PlasmicDescendants = {
-  root: ["root", "logo"],
-  logo: ["logo"]
+  root: ["root", "logo", "buttonWa", "link"],
+  logo: ["logo"],
+  buttonWa: ["buttonWa"],
+  link: ["link"]
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
@@ -357,6 +246,8 @@ type DescendantsType<T extends NodeNameType> =
 type NodeDefaultElementType = {
   root: "div";
   logo: typeof Logo;
+  buttonWa: typeof ButtonWa;
+  link: "a";
 };
 
 type ReservedPropsType = "variants" | "args" | "overrides";
@@ -420,6 +311,8 @@ export const PlasmicFooterSection = Object.assign(
   {
     // Helper components rendering sub-elements
     logo: makeNodeComponent("logo"),
+    buttonWa: makeNodeComponent("buttonWa"),
+    link: makeNodeComponent("link"),
 
     // Metadata about props expected for PlasmicFooterSection
     internalVariantProps: PlasmicFooterSection__VariantProps,

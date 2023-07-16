@@ -42,6 +42,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_deka_cell.module.css"; // plasmic-import: 5W4T71ZWGdu6kYqLvuuQ3N/projectcss
 import sty from "./PlasmicBanner.module.css"; // plasmic-import: rkhq07yXHHVSGVN/css
 
+createPlasmicElementProxy;
+
 export type PlasmicBanner__VariantMembers = {};
 export type PlasmicBanner__VariantsArgs = {};
 type VariantPropType = keyof PlasmicBanner__VariantsArgs;
@@ -104,6 +106,7 @@ function PlasmicBanner__RenderFunc(props: {
       ),
     [props.args]
   );
+
   const $props = {
     ...args,
     ...variants
@@ -160,7 +163,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   right: "div";

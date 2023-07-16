@@ -49,6 +49,8 @@ import sty from "./PlasmicNavbar.module.css"; // plasmic-import: E68qrDQCcYGuytT
 
 import AppleIcon from "./icons/PlasmicIcon__Apple"; // plasmic-import: kKNkwOGnEhqtvD_/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicNavbar__VariantMembers = {};
 export type PlasmicNavbar__VariantsArgs = {};
 type VariantPropType = keyof PlasmicNavbar__VariantsArgs;
@@ -94,6 +96,7 @@ function PlasmicNavbar__RenderFunc(props: {
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+
   const $props = {
     ...args,
     ...variants
@@ -207,7 +210,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   logo: typeof Logo;

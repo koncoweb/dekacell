@@ -776,8 +776,13 @@
   width: 100%;
   height: auto;
   max-width: 100%;
-  font-size: 24px;
+  display: flex;
+  flex-direction: column;
   min-width: 0;
+}
+.text___58Ysa {
+  position: relative;
+  font-size: 24px;
 }
 .kolomKontak__yyWWl:global(.__wab_instance) {
   position: relative;

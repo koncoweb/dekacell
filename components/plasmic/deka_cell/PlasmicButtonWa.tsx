@@ -45,6 +45,8 @@ import sty from "./PlasmicButtonWa.module.css"; // plasmic-import: lC_mwoGu3T/cs
 
 import AppleIcon from "./icons/PlasmicIcon__Apple"; // plasmic-import: kKNkwOGnEhqtvD_/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicButtonWa__VariantMembers = {};
 export type PlasmicButtonWa__VariantsArgs = {};
 type VariantPropType = keyof PlasmicButtonWa__VariantsArgs;
@@ -89,6 +91,7 @@ function PlasmicButtonWa__RenderFunc(props: {
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+
   const $props = {
     ...args,
     ...variants
@@ -127,7 +130,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: typeof Button;
   text: "div";

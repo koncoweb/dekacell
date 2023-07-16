@@ -42,6 +42,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_deka_cell.module.css"; // plasmic-import: 5W4T71ZWGdu6kYqLvuuQ3N/projectcss
 import sty from "./PlasmicDivider.module.css"; // plasmic-import: 3h3NvvwyM53khXJ/css
 
+createPlasmicElementProxy;
+
 export type PlasmicDivider__VariantMembers = {};
 export type PlasmicDivider__VariantsArgs = {};
 type VariantPropType = keyof PlasmicDivider__VariantsArgs;
@@ -85,6 +87,7 @@ function PlasmicDivider__RenderFunc(props: {
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+
   const $props = {
     ...args,
     ...variants
@@ -119,7 +122,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
 };

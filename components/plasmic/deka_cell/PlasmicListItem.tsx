@@ -44,6 +44,8 @@ import sty from "./PlasmicListItem.module.css"; // plasmic-import: Rxz1zU5HS7x0V
 
 import CheckCircleIcon from "./icons/PlasmicIcon__CheckCircle"; // plasmic-import: vO6c7RnrZ5iCKC-/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicListItem__VariantMembers = {
   bottomBorder: "light" | "dark";
   leftCheck: "leftCheck";
@@ -106,6 +108,7 @@ function PlasmicListItem__RenderFunc(props: {
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+
   const $props = {
     ...args,
     ...variants
@@ -132,9 +135,14 @@ function PlasmicListItem__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.leftCheck
       }
     ],
-    [$props, $ctx]
+    [$props, $ctx, $refs]
   );
-  const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
+  const $state = p.useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries,
+    $refs
+  });
 
   return (
     <p.Stack
@@ -190,7 +198,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
 };

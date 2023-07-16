@@ -46,6 +46,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_deka_cell.module.css"; // plasmic-import: 5W4T71ZWGdu6kYqLvuuQ3N/projectcss
 import sty from "./PlasmicServices.module.css"; // plasmic-import: PIO5vM9nFXA9SKL/css
 
+createPlasmicElementProxy;
+
 export type PlasmicServices__VariantMembers = {};
 export type PlasmicServices__VariantsArgs = {};
 type VariantPropType = keyof PlasmicServices__VariantsArgs;
@@ -96,6 +98,7 @@ function PlasmicServices__RenderFunc(props: {
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+
   const $props = {
     ...args,
     ...variants
@@ -610,7 +613,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "dd";
   navbar: typeof Navbar;

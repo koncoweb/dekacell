@@ -56,9 +56,14 @@
           "name": "DataProvider",
           "displayName": "hostless-data-provider",
           "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
+        },
+        {
+          "id": "zlBHsvkFlN",
+          "name": "ConditionGuard",
+          "displayName": "hostless-condition-guard",
+          "componentImportPath": "@plasmicpkgs/plasmic-basic-components"
         }
-      ],
-      "jsBundleThemes": []
+      ]
     },
     {
       "projectId": "5W4T71ZWGdu6kYqLvuuQ3N",
@@ -558,6 +563,6 @@
   "nextjsConfig": {
     "pagesDir": "../pages"
   },
-  "cliVersion": "0.1.292",
-  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.292/dist/plasmic.schema.json"
+  "cliVersion": "0.1.300",
+  "$schema": "https://unpkg.com/@plasmicapp/cli@0.1.300/dist/plasmic.schema.json"
 }

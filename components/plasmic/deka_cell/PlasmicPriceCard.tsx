@@ -46,6 +46,8 @@ import sty from "./PlasmicPriceCard.module.css"; // plasmic-import: l-WFqa9E_5r9
 
 import CheckIcon from "./icons/PlasmicIcon__Check"; // plasmic-import: G1KExKKDBFUnOuW/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicPriceCard__VariantMembers = {
   primary: "primary";
   borders: "flatLeft" | "flatRight";
@@ -112,6 +114,7 @@ function PlasmicPriceCard__RenderFunc(props: {
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+
   const $props = {
     ...args,
     ...variants
@@ -138,9 +141,14 @@ function PlasmicPriceCard__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.borders
       }
     ],
-    [$props, $ctx]
+    [$props, $ctx, $refs]
   );
-  const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
+  const $state = p.useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries,
+    $refs
+  });
 
   return (
     <div
@@ -254,7 +262,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   divider: typeof Divider;

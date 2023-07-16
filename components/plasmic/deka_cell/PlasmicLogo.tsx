@@ -42,6 +42,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_deka_cell.module.css"; // plasmic-import: 5W4T71ZWGdu6kYqLvuuQ3N/projectcss
 import sty from "./PlasmicLogo.module.css"; // plasmic-import: RcKSuSxU4hFDkbk/css
 
+createPlasmicElementProxy;
+
 export type PlasmicLogo__VariantMembers = {
   _50Opaque: "_50Opaque";
 };
@@ -93,6 +95,7 @@ function PlasmicLogo__RenderFunc(props: {
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+
   const $props = {
     ...args,
     ...variants
@@ -113,9 +116,14 @@ function PlasmicLogo__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => $props._50Opaque
       }
     ],
-    [$props, $ctx]
+    [$props, $ctx, $refs]
   );
-  const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
+  const $state = p.useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries,
+    $refs
+  });
 
   return (
     <p.PlasmicLink
@@ -167,7 +175,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "a";
   img: typeof p.PlasmicImg;

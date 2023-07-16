@@ -62,6 +62,8 @@ import AppleIcon from "./icons/PlasmicIcon__Apple"; // plasmic-import: kKNkwOGnE
 import ChevronRightIcon from "./icons/PlasmicIcon__ChevronRight"; // plasmic-import: -2ZVGvYOMZ7zSX3/icon
 import CheckCircleIcon from "./icons/PlasmicIcon__CheckCircle"; // plasmic-import: vO6c7RnrZ5iCKC-/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicHomepage__VariantMembers = {};
 export type PlasmicHomepage__VariantsArgs = {};
 type VariantPropType = keyof PlasmicHomepage__VariantsArgs;
@@ -118,6 +120,7 @@ function PlasmicHomepage__RenderFunc(props: {
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+
   const $props = {
     ...args,
     ...variants
@@ -592,13 +595,20 @@ function PlasmicHomepage__RenderFunc(props: {
                 className={classNames(
                   projectcss.all,
                   projectcss.address,
-                  projectcss.__wab_text,
                   sty.address
                 )}
               >
-                {
-                  "Jl. Irian No.69, Sapuro Kebulen, Kec. Pekalongan Barat, Kota Pekalongan, Jawa Tengah 51112, Indonesia\n"
-                }
+                <div
+                  className={classNames(
+                    projectcss.all,
+                    projectcss.__wab_text,
+                    sty.text___58Ysa
+                  )}
+                >
+                  {
+                    "Pertigaan Jalan Raya Tangkil Tengah, Kedungwuni Belakang Alfamart\n\n"
+                  }
+                </div>
               </address>
               <KolomKontak
                 className={classNames("__wab_instance", sty.kolomKontak__yyWWl)}
@@ -610,7 +620,7 @@ function PlasmicHomepage__RenderFunc(props: {
                 data-plasmic-override={overrides.embedHtml}
                 className={classNames("__wab_instance", sty.embedHtml)}
                 code={
-                  '<iframe src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d990.2347239034349!2d109.672949!3d-6.897912!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e7025baabfabbcf%3A0x3ef8317dc32d89b4!2sDeka%20cell%20service%20hp%20pekalongan%20terpercaya!5e0!3m2!1sen!2sus!4v1686640980311!5m2!1sen!2sus" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' as const
+                  '<iframe src="https://www.google.com/maps/embed?pb=!1m17!1m12!1m3!1d3960.533892075854!2d109.63854871477294!3d-6.946170494981501!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zNsKwNTYnNDYuMiJTIDEwOcKwMzgnMjYuNyJF!5e0!3m2!1sid!2sid!4v1689508298147!5m2!1sid!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>' as const
                 }
               />
             </div>
@@ -1252,7 +1262,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   headerHeroSection: "div";

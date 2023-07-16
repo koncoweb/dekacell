@@ -42,6 +42,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_deka_cell.module.css"; // plasmic-import: 5W4T71ZWGdu6kYqLvuuQ3N/projectcss
 import sty from "./PlasmicValueProp.module.css"; // plasmic-import: bjiW3HuNh1M7Jjd/css
 
+createPlasmicElementProxy;
+
 export type PlasmicValueProp__VariantMembers = {
   flatIcon: "flatIcon";
   vertical: "vertical";
@@ -121,6 +123,7 @@ function PlasmicValueProp__RenderFunc(props: {
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+
   const $props = {
     ...args,
     ...variants
@@ -165,9 +168,14 @@ function PlasmicValueProp__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.darkBackground
       }
     ],
-    [$props, $ctx]
+    [$props, $ctx, $refs]
   );
-  const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
+  const $state = p.useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries,
+    $refs
+  });
 
   return (
     <p.Stack
@@ -301,7 +309,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   iconContainer: "div";

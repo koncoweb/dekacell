@@ -42,6 +42,8 @@ import "@plasmicapp/react-web/lib/plasmic.css";
 import projectcss from "./plasmic_deka_cell.module.css"; // plasmic-import: 5W4T71ZWGdu6kYqLvuuQ3N/projectcss
 import sty from "./PlasmicSection.module.css"; // plasmic-import: b0bebQ2q38EEWyq/css
 
+createPlasmicElementProxy;
+
 export type PlasmicSection__VariantMembers = {
   background: "dark" | "gray";
   size: "fullContentWidth";
@@ -100,6 +102,7 @@ function PlasmicSection__RenderFunc(props: {
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+
   const $props = {
     ...args,
     ...variants
@@ -126,9 +129,14 @@ function PlasmicSection__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.size
       }
     ],
-    [$props, $ctx]
+    [$props, $ctx, $refs]
   );
-  const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
+  const $state = p.useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries,
+    $refs
+  });
 
   return (
     <div
@@ -180,7 +188,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   freeBox: "div";

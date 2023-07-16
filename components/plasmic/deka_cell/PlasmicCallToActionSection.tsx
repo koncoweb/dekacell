@@ -48,6 +48,8 @@ import sty from "./PlasmicCallToActionSection.module.css"; // plasmic-import: Ab
 import AppleIcon from "./icons/PlasmicIcon__Apple"; // plasmic-import: kKNkwOGnEhqtvD_/icon
 import ChevronRightIcon from "./icons/PlasmicIcon__ChevronRight"; // plasmic-import: -2ZVGvYOMZ7zSX3/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicCallToActionSection__VariantMembers = {};
 export type PlasmicCallToActionSection__VariantsArgs = {};
 type VariantPropType = keyof PlasmicCallToActionSection__VariantsArgs;
@@ -118,6 +120,7 @@ function PlasmicCallToActionSection__RenderFunc(props: {
       ),
     [props.args]
   );
+
   const $props = {
     ...args,
     ...variants
@@ -272,7 +275,7 @@ function PlasmicCallToActionSection__RenderFunc(props: {
                             sty.text__xxKwo
                           )}
                         >
-                          {"Learn more…"}
+                          {"Learn more\u2026"}
                         </div>
                       </Button>
                     </p.Stack>
@@ -297,7 +300,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   art: "div";

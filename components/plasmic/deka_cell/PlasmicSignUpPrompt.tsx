@@ -51,6 +51,8 @@ import SearchIcon from "./icons/PlasmicIcon__Search"; // plasmic-import: zmqEq1b
 import CheckIcon from "./icons/PlasmicIcon__Check"; // plasmic-import: G1KExKKDBFUnOuW/icon
 import WandIcon from "./icons/PlasmicIcon__Wand"; // plasmic-import: Niu3lPumPUGjG80/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicSignUpPrompt__VariantMembers = {};
 export type PlasmicSignUpPrompt__VariantsArgs = {};
 type VariantPropType = keyof PlasmicSignUpPrompt__VariantsArgs;
@@ -97,6 +99,7 @@ function PlasmicSignUpPrompt__RenderFunc(props: {
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+
   const $props = {
     ...args,
     ...variants
@@ -129,9 +132,14 @@ function PlasmicSignUpPrompt__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => "" as const
       }
     ],
-    [$props, $ctx]
+    [$props, $ctx, $refs]
   );
-  const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
+  const $state = p.useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries,
+    $refs
+  });
 
   return (
     <p.Stack
@@ -307,7 +315,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   textInput: typeof TextInput;

@@ -49,6 +49,8 @@ import sty from "./PlasmicFooterSection.module.css"; // plasmic-import: nGsC6Y1B
 
 import AppleIcon from "./icons/PlasmicIcon__Apple"; // plasmic-import: kKNkwOGnEhqtvD_/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicFooterSection__VariantMembers = {};
 export type PlasmicFooterSection__VariantsArgs = {};
 type VariantPropType = keyof PlasmicFooterSection__VariantsArgs;
@@ -95,6 +97,7 @@ function PlasmicFooterSection__RenderFunc(props: {
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+
   const $props = {
     ...args,
     ...variants
@@ -242,7 +245,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   logo: typeof Logo;

@@ -32,31 +32,6 @@
 .rootshowStartIcon {
   display: flex;
 }
-.rooticonOnly {
-  padding-top: 11px;
-  padding-bottom: 11px;
-}
-.rootoutline {
-  border: 1px solid var(--token-w02QwgoSwbg-KdJ);
-}
-.rootbgDifference {
-  mix-blend-mode: difference;
-}
-.rootround {
-  padding-left: 20px;
-  padding-right: 20px;
-  border-radius: 24px;
-}
-.rootflat {
-  padding: 0px;
-}
-.rootextraSmallShadow {
-  box-shadow: 0px 1px 1px 1px #0000001a;
-}
-.rootisDisabled {
-  cursor: not-allowed;
-  opacity: 0.5;
-}
 .rootcolor_green {
   background: #34c759;
 }
@@ -99,6 +74,31 @@
 }
 .rootcolor_darkGray {
   background: var(--token-mKxumytFpK3K8OF);
+}
+.rooticonOnly {
+  padding-top: 11px;
+  padding-bottom: 11px;
+}
+.rootoutline {
+  border: 1px solid var(--token-w02QwgoSwbg-KdJ);
+}
+.rootbgDifference {
+  mix-blend-mode: difference;
+}
+.rootround {
+  padding-left: 20px;
+  padding-right: 20px;
+  border-radius: 24px;
+}
+.rootflat {
+  padding: 0px;
+}
+.rootextraSmallShadow {
+  box-shadow: 0px 1px 1px 1px #0000001a;
+}
+.rootisDisabled {
+  cursor: not-allowed;
+  opacity: 0.5;
 }
 .root:hover {
   background: var(--token-myZxfJdq_yhOKlb);
@@ -159,14 +159,6 @@
   line-height: 26px;
   white-space: pre;
 }
-.slotTargetChildrencolor_navLink {
-  font-weight: 400;
-  color: var(--token-voQVjzkA-FuoJ5Y);
-}
-.slotTargetChildrenlarge {
-  font-size: 24px;
-  line-height: 1.5em;
-}
 .slotTargetChildrencolor_green {
   color: var(--token-ER0EqoDprnUkdkZ);
 }
@@ -184,6 +176,14 @@
 }
 .slotTargetChildrencolor_link {
   color: var(--token-y5cpmsTtUUnKvfG);
+}
+.slotTargetChildrencolor_navLink {
+  font-weight: 400;
+  color: var(--token-voQVjzkA-FuoJ5Y);
+}
+.slotTargetChildrenlarge {
+  font-size: 24px;
+  line-height: 1.5em;
 }
 .rootcolor_navLink:hover .slotTargetChildrencolor_navLink {
   color: var(--token-mKxumytFpK3K8OF);

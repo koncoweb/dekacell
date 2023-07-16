@@ -46,6 +46,8 @@ import sty from "./PlasmicTextInput.module.css"; // plasmic-import: j36M2pmaGlrb
 import SearchIcon from "./icons/PlasmicIcon__Search"; // plasmic-import: zmqEq1baE0TYE7H/icon
 import CheckIcon from "./icons/PlasmicIcon__Check"; // plasmic-import: G1KExKKDBFUnOuW/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicTextInput__VariantMembers = {
   showStartIcon: "showStartIcon";
   showEndIcon: "showEndIcon";
@@ -154,6 +156,7 @@ function PlasmicTextInput__RenderFunc(props: {
       ),
     [props.args]
   );
+
   const $props = {
     ...args,
     ...variants
@@ -194,9 +197,14 @@ function PlasmicTextInput__RenderFunc(props: {
         onChangeProp: "onChange"
       }
     ],
-    [$props, $ctx]
+    [$props, $ctx, $refs]
   );
-  const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
+  const $state = p.useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries,
+    $refs
+  });
 
   const [isRootFocusVisibleWithin, triggerRootFocusVisibleWithinProps] =
     useTrigger("useFocusVisibleWithin", {
@@ -358,7 +366,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   startIconContainer: "div";

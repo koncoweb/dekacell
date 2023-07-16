@@ -45,6 +45,8 @@ import sty from "./PlasmicButton.module.css"; // plasmic-import: OZSqee0ES_HTq_B
 
 import AppleIcon from "./icons/PlasmicIcon__Apple"; // plasmic-import: kKNkwOGnEhqtvD_/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicButton__VariantMembers = {
   showStartIcon: "showStartIcon";
   showEndIcon: "showEndIcon";
@@ -173,6 +175,7 @@ function PlasmicButton__RenderFunc(props: {
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+
   const $props = {
     ...args,
     ...variants
@@ -254,9 +257,14 @@ function PlasmicButton__RenderFunc(props: {
         initFunc: ({ $props, $state, $queries, $ctx }) => $props.isDisabled
       }
     ],
-    [$props, $ctx]
+    [$props, $ctx, $refs]
   );
-  const $state = p.useDollarState(stateSpecs, { $props, $ctx, $queries });
+  const $state = p.useDollarState(stateSpecs, {
+    $props,
+    $ctx,
+    $queries,
+    $refs
+  });
 
   return (
     <p.Stack
@@ -472,10 +480,10 @@ function PlasmicButton__RenderFunc(props: {
           })
         : null}
       {(
-        hasVariant($state, "showEndIcon", "showEndIcon")
-          ? true
-          : hasVariant($state, "iconOnly", "iconOnly")
+        hasVariant($state, "iconOnly", "iconOnly")
           ? false
+          : hasVariant($state, "showEndIcon", "showEndIcon")
+          ? true
           : hasVariant($state, "showStartIcon", "showStartIcon")
           ? false
           : false
@@ -578,6 +586,7 @@ function useBehavior<P extends pp.PlumeButtonProps>(
     },
     ref
   );
+
   if (b.plasmicProps.overrides.root.as === "a") {
     b.plasmicProps.overrides.root.as = p.PlasmicLink;
     b.plasmicProps.overrides.root.props.component = Link;
@@ -591,7 +600,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "button";
 };

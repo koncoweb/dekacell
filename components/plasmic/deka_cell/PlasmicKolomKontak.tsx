@@ -49,6 +49,8 @@ import sty from "./PlasmicKolomKontak.module.css"; // plasmic-import: yBAyndXdAN
 import TargetIcon from "./icons/PlasmicIcon__Target"; // plasmic-import: wMBQ1XNz-iMYqFD/icon
 import AppleIcon from "./icons/PlasmicIcon__Apple"; // plasmic-import: kKNkwOGnEhqtvD_/icon
 
+createPlasmicElementProxy;
+
 export type PlasmicKolomKontak__VariantMembers = {};
 export type PlasmicKolomKontak__VariantsArgs = {};
 type VariantPropType = keyof PlasmicKolomKontak__VariantsArgs;
@@ -95,6 +97,7 @@ function PlasmicKolomKontak__RenderFunc(props: {
 
   const $ctx = ph.useDataEnv?.() || {};
   const args = React.useMemo(() => Object.assign({}, props.args), [props.args]);
+
   const $props = {
     ...args,
     ...variants
@@ -169,7 +172,7 @@ const PlasmicDescendants = {
 } as const;
 type NodeNameType = keyof typeof PlasmicDescendants;
 type DescendantsType<T extends NodeNameType> =
-  (typeof PlasmicDescendants)[T][number];
+  typeof PlasmicDescendants[T][number];
 type NodeDefaultElementType = {
   root: "div";
   button: typeof Button;

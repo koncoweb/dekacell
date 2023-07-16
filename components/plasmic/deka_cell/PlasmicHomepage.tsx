@@ -176,6 +176,7 @@ function PlasmicHomepage__RenderFunc(props: {
           name="twitter:image"
           content={PlasmicHomepage.pageMetadata.ogImageSrc}
         />
+        <link ref="canonical" href={PlasmicHomepage.pageMetadata.canonical} />
       </Head>
 
       <style>{`
@@ -1366,10 +1367,10 @@ export const PlasmicHomepage = Object.assign(
     pageMetadata: {
       title: "DekaCell : Servis HP Pekalongan",
       description:
-        "Servis HP Pekalongan menangani servis Hardware dan Software HP di Pekalongan. Bisa ditunggu untuk kerusakan sederhana",
+        "Servis HP Pekalongan termurah servis hp tidak bisa dicas, servis hp ganti layar pekalongan Hardware dan Software HP di Pekalongan. Bisa ditunggu untuk untuk ganti ",
       ogImageSrc:
         "https://site-assets.plasmic.app/5f2806c24456e3a0067d3cca570fa287.jpg",
-      canonical: ""
+      canonical: "https://www.dekacell.com/"
     }
   }
 );

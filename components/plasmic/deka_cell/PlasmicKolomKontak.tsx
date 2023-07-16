@@ -138,7 +138,7 @@ function PlasmicKolomKontak__RenderFunc(props: {
               ? ("white" as const)
               : ("white" as const)
           }
-          link={"https://goo.gl/maps/LCXtf5648UmSwRm1A" as const}
+          link={"https://goo.gl/maps/Fu2U4jPByLEqKH656" as const}
           showStartIcon={true}
           startIcon={
             <TargetIcon
